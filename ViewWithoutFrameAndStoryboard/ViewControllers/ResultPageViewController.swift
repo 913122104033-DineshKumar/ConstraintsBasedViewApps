@@ -19,17 +19,26 @@ class ResultPageViewController: UIViewController
         
         self.view.addSubview(resultView)
         
-        NSLayoutConstraint(item: resultView, attribute: .leftMargin, relatedBy: .equal, toItem: self.view, attribute: .leftMargin, multiplier: 1, constant: 20).isActive = true
-        NSLayoutConstraint(item: resultView, attribute: .topMargin, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 1, constant: 100).isActive = true
-        NSLayoutConstraint(item: resultView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 350).isActive = true
-        NSLayoutConstraint(item: resultView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 100).isActive = true
+        NSLayoutConstraint.activate(
+            [
+                NSLayoutConstraint(item: resultView, attribute: .leftMargin, relatedBy: .equal, toItem: self.view, attribute: .leftMargin, multiplier: 1, constant: 20),
+                NSLayoutConstraint(item: resultView, attribute: .topMargin, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 1, constant: 100),
+                NSLayoutConstraint(item: resultView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 350),
+                NSLayoutConstraint(item: resultView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 100)
+            ]
+        )
         
         self.view.addSubview(image)
         
-        NSLayoutConstraint(item: image, attribute: .centerX, relatedBy: .equal, toItem: resultView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: image, attribute: .topMargin, relatedBy: .equal, toItem: resultView, attribute: .topMargin, multiplier: 1, constant: 90).isActive = true
-        NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 500).isActive = true
-        NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 300).isActive = true
+        NSLayoutConstraint.activate(
+            [
+                NSLayoutConstraint(item: image, attribute: .centerX, relatedBy: .equal, toItem: resultView, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: image, attribute: .topMargin, relatedBy: .equal, toItem: resultView, attribute: .topMargin, multiplier: 1, constant: 90),
+                NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 500),
+                NSLayoutConstraint(item: resultView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 100),
+                NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 300)
+            ]
+        )
         
     }
     
